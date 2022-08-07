@@ -1,14 +1,14 @@
 {
-  "name": "Glazy ",
+  "name": "RamoisReaLoL Boş Altyapı v14",
   "version": "2.0.0",
-  "description": "Glazy",
+  "description": "Boş Altyapı v14",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
     "discord-sync-commands": "^0.3.0",
-    "discord.js": "^14.0.1",
+    "discord.js": "^14.0.1"
    },
   "engines": {
     "node": "16.16.x"
