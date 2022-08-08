@@ -6,17 +6,18 @@ const config = require("./config.json");
 const synchronizeSlashCommands = require("discord-sync-commands");
 
 const { token } = require("./config.json");
+
 client.commands = new Collection();
 fs.readdir("./komutlar/", (_err, files) => {
   files.forEach((file) => {
     if (!file.endsWith(".js")) return;
     let props = require(`./komutlar/${file}`);
     let commandName = file.split(".")[0];
-    client.commands.set(commandName, {
-      name: commandName,
+    client.commands.set(props.name, {
+      name: props,
       ...props,
     });
-    console.log(`Komut Yüklendi: ${commandName}`);
+    console.log(`Komut Yüklendi: ${props.name}`);
   });
   synchronizeSlashCommands(
     client,
@@ -27,7 +28,7 @@ fs.readdir("./komutlar/", (_err, files) => {
       type: c.type,
     })),
     {
-      debug: true,
+      debug: false,
     }
   );
 });
