@@ -1,10 +1,10 @@
-const { ApplicationCommandType } = require("discord.js");
+const { Discord } = require("discord.js");
 module.exports = {
     name: 'ping',
     description: 'Botun Pingine Bakarsınız',
-    type: ApplicationCommandType.CHAT_INPUT,
+    type: 1,
     options: [],
     run: async (client, interaction) => {
-       interaction.channel.send(`${client.ws.ping} ms`)
+      await interaction.channel.send(`${client.ws.ping} ms`)
  }
 };
